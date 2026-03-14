@@ -24,7 +24,8 @@ scan_char:
     mov ecx, char_buffer
     mov edx, 1
     int 0x80
-
+    cmp byte [char_buffer], 0x0A
+    je .leer
     mov al, [char_buffer]
 
     pop edx
